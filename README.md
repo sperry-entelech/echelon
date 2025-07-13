@@ -6,6 +6,11 @@
 
 Echelon AI Agents is a multi-agent platform that enables users to deploy, monitor, and manage AI agents for various tasks including market analysis, web search, media processing, and automated workflows. The platform provides real-time insights, mind map visualization of AI reasoning, and automated deployment pipelines.
 
+For full requirements, user flows, UI specs, and integration details, see the complete MVP specification PDF in the /docs folder:
+docs/Echelon_MicroSaaS_MVP_Dev_Spec.pdf
+
+All contributors should review this document before starting development or integration work. It serves as the single source of truth for architecture and build priorities.
+
 ## 🏗️ Architecture Stack
 
 - **Frontend**: Base44 (AI-powered no-code platform)
