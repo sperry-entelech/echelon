@@ -1,58 +1,122 @@
 # Echelon
 
-> **Supervised Autonomy Infrastructure for Enterprise AI**
+> **Supervised Workflow Automation Infrastructure**
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](docs/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ---
 
 ## Overview
 
-Echelon is an **intelligent workflow automation platform** that enables enterprises to build custom AI agent pipelines with built-in human oversight. Unlike generic AI SaaS tools that promise full autonomy, Echelon is architected around **supervised autonomy**—the proven pattern where AI handles high-volume tasks with human approval at critical decision points.
+Echelon is a **supervised workflow automation platform** that enables businesses to build their own AI-enabled internal tools instead of settling for generic SaaS solutions.
 
-**Built for:** Mid-market to enterprise operations teams (50-5000 employees) who need their EXACT workflows automated, not generic 80% solutions.
+**The vibe coding thesis:** By 2026, businesses will build their exact workflows internally using AI assistance rather than buying one-size-fits-all software. Echelon provides the infrastructure for supervised automation—AI handles the 80% grunt work, humans approve the 20% that requires judgment.
+
+**Initial focus:** Professional services firms (staffing agencies, insurance brokerages, financial advisors) with complex, high-stakes workflows that can't be fully automated.
 
 ---
 
 ## Why Echelon Exists
 
-### The Problem with Generic AI SaaS
+### The Problem: Generic SaaS Doesn't Fit
 
-Most AI tools fail in enterprise because they're built for everyone, which means they fit nobody perfectly. Enterprise clients need:
+Most business software is built for everyone, which means it fits nobody perfectly:
 
-- Their specific data sources integrated
-- Their custom approval thresholds enforced
-- Their unique output formats maintained
-- Their existing tool ecosystems connected
-- Their compliance requirements satisfied
+- ❌ One-size-fits-all features you don't need
+- ❌ Missing the specific workflows you DO need
+- ❌ Expensive customization that breaks on updates
+- ❌ Vendor lock-in with no control over your data
+- ❌ "AI features" that don't understand your business
 
-**Generic platforms can't deliver this without extensive forward-deployed engineering.**
+**The 2026 shift:** Businesses are bringing development internal with AI-assisted tooling. Why pay for generic SaaS when you can build exactly what you need?
 
-### Our Solution
+### The Solution: Build Your Own With Supervision
 
 Echelon provides:
 
-1. **Visual workflow builder** - Design complex multi-step automation pipelines
-2. **Industry-specific templates** - Pre-built workflows for common use cases (80% complete)
-3. **Supervised autonomy by default** - Human approval nodes built into every critical decision
-4. **Transparent reasoning chains** - Full audit trails showing why AI made each decision
-5. **Forward-deployed engineering** - Implementation support to achieve 100% workflow fit
+1. **Workflow automation infrastructure** - Build custom pipelines for your exact processes
+2. **Supervised autonomy** - AI proposes actions, humans approve critical decisions
+3. **Pre-built templates** - Start with 80% complete workflows for common use cases
+4. **Full data control** - Your workflows, your data, your rules
+5. **Observable** - Complete audit trails for compliance and debugging
 
 ---
 
-## Core Architecture
+## Core Use Case: Professional Services Staffing
+
+Professional services firms (staffing agencies, insurance brokerages, financial advisors) have workflows that generic CRMs and ATS systems can't handle:
+
+- High-stakes decisions requiring human judgment
+- Complex approval workflows (recruiter → manager → client)
+- Relationship-dependent processes (candidates, hiring managers, clients)
+- Compliance requirements (EEOC, data privacy, industry regulations)
+
+**Echelon enables these firms to build internal automation that fits their EXACT processes.**
+
+---
+
+## Use Cases
+
+### 1. Candidate Communication Automation (Staffing Agencies)
+
+**The workflow:**
+- AI screens incoming applications against job requirements
+- AI drafts personalized outreach messages
+- **Recruiter reviews and approves** candidate shortlists
+- AI schedules initial calls and sends calendar invites
+- **Recruiter approves** interview scheduling with hiring managers
+
+**ROI:**
+- 60% reduction in recruiter admin time
+- 3x more candidates engaged per recruiter
+- Zero mistakes on high-value placements (human review required)
+
+---
+
+### 2. Placement Process Automation (Staffing Agencies)
+
+**The workflow:**
+- AI matches candidates to job specifications
+- AI generates interview guides based on client requirements
+- **Account manager approves** final candidate selections
+- AI drafts offer letters and compensation packages
+- **Manager approves** before sending to candidates
+
+**ROI:**
+- 40% faster time-to-placement
+- 20% higher offer acceptance rates
+- Complete audit trail for compliance
+
+---
+
+### 3. Client Workflow Automation (Professional Services)
+
+**The workflow:**
+- AI parses job descriptions and extracts requirements
+- AI researches hiring manager preferences and company culture
+- **Sales lead approves** client outreach strategy
+- AI drafts positioning emails and follow-up sequences
+- **Sales lead approves** pricing proposals before submission
+
+**ROI:**
+- 50% faster client onboarding
+- 30% more job orders per account manager
+- Higher client satisfaction (more responsive, personalized)
+
+---
+
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                   Workflow Designer (Base44)                │
-│         Visual workflow builder + Industry templates        │
+│         Visual builder + Industry-specific templates        │
 └─────────────────────────────────────────────────────────────┘
                             │
 ┌─────────────────────────────────────────────────────────────┐
 │             Execution Engine (Cloudflare Workers)           │
-│      Task routing + Approval management + Audit logging     │
+│      Task routing + Approval gates + Audit logging          │
 └─────────────────────────────────────────────────────────────┘
                             │
 ┌─────────────────────────────────────────────────────────────┐
@@ -66,36 +130,11 @@ Echelon provides:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-**Key Design Principles:**
-- **Supervised > Autonomous** - AI proposes, humans approve at critical points
-- **Observable** - Every decision logged with reasoning for audit/compliance
-- **Modular** - Swap AI models, data sources, approval logic without rebuilding
-- **Reliable** - Graceful degradation when AI confidence is low
-
----
-
-## Use Cases
-
-### Logistics & Transportation
-**Workflow:** Route optimization with driver communication
-- AI analyzes traffic, weather, and load priorities
-- Human dispatcher approves route changes affecting SLAs
-- Automated driver notifications with ETA updates
-- **ROI:** 15-25% reduction in dispatch labor, 10-15% fuel savings
-
-### Professional Services
-**Workflow:** Client intake and project scoping
-- AI extracts requirements from RFPs and discovery calls
-- Human partner approves scope and pricing
-- Automated SOW generation and client communication
-- **ROI:** 40-60% faster intake, 20-30% higher proposal volume
-
-### Healthcare Operations
-**Workflow:** Patient intake and insurance verification
-- AI pre-fills forms from documents and conversation
-- Human staff verifies insurance eligibility
-- Automated appointment scheduling and reminders
-- **ROI:** 30-50% faster intake, 90%+ pre-authorization accuracy
+**Design Principles:**
+- **Supervised > Autonomous** - AI assists, humans decide
+- **Observable** - Every decision logged for compliance
+- **Modular** - Swap components without rebuilding
+- **Yours** - You control the code, data, and logic
 
 ---
 
@@ -103,159 +142,132 @@ Echelon provides:
 
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
-| **Frontend** | Base44 | Visual workflow designer, dashboards |
-| **API Gateway** | Cloudflare Workers | Edge routing, auth, rate limiting |
-| **Database** | Supabase PostgreSQL | Workflow state, audit logs, user data |
-| **Real-time** | Supabase Realtime | Live status updates, collaboration |
-| **Orchestration** | n8n | Workflow execution, external integrations |
-| **AI Models** | Claude, OpenAI | Task-specific reasoning and generation |
-| **Notifications** | SendGrid, Twilio | Email, SMS alerts for approvals |
+| **Frontend** | Base44 | Visual workflow designer |
+| **API Gateway** | Cloudflare Workers | Edge routing, auth |
+| **Database** | Supabase PostgreSQL | Workflow state, audit logs |
+| **Orchestration** | n8n | Workflow execution |
+| **AI Models** | Claude, OpenAI | Reasoning, generation |
 
 ---
 
-## Quick Start for Developers
+## Dogfooding: How We Use Echelon
+
+We built Echelon while running an AI operations consultancy serving staffing agencies. Every feature exists because we needed it ourselves.
+
+**Our workflows:**
+- Client discovery call transcription → requirement extraction → scope generation
+- Candidate research automation → shortlist creation → client presentation prep
+- Weekly status updates → progress summarization → client communication
+
+**Results:**
+- 12 hours/week saved per consultant
+- 40% faster client onboarding
+- Zero missed deliverables (approval gates prevent errors)
+
+See [DOGFOODING.md](DOGFOODING.md) for detailed case studies.
+
+---
+
+## Quick Start
 
 ### Prerequisites
 - Node.js 18+
-- PostgreSQL (or Supabase account)
-- n8n Cloud or self-hosted instance
+- Supabase account (or PostgreSQL)
+- n8n Cloud or self-hosted
 - Cloudflare Workers account
 
-### 1. Clone and Install
+### Installation
+
 ```bash
 git clone https://github.com/sperry-entelech/echelon.git
 cd echelon
 npm install
-```
 
-### 2. Database Setup
-```bash
-# Run schema migrations
-psql -h YOUR_SUPABASE_URL -f database/schema_sql.sql
+# Setup database
+psql -h YOUR_SUPABASE_URL -f schema_sql.sql
 
-# Verify tables created
-psql -h YOUR_SUPABASE_URL -c "\dt"
-```
-
-### 3. Environment Configuration
-```bash
+# Configure environment
 cp .env.example .env
+# Edit .env with your credentials
 
-# Required variables
-SUPABASE_URL=https://xxx.supabase.co
-SUPABASE_SERVICE_KEY=eyJ...
-N8N_WEBHOOK_URL=https://n8n.example.com/webhook
-CLOUDFLARE_ACCOUNT_ID=xxx
-OPENAI_API_KEY=sk-xxx
-```
-
-### 4. Deploy Cloudflare Workers
-```bash
+# Deploy
 npm run deploy:workers
 ```
 
-### 5. Access Dashboard
-Navigate to `https://YOUR_WORKERS_URL` to access the workflow designer.
+### First Workflow
+
+1. Access dashboard at `https://YOUR_WORKERS_URL`
+2. Choose a template (e.g., "Candidate Communication Workflow")
+3. Customize approval gates and AI prompts
+4. Connect your data sources (ATS, CRM, email)
+5. Test with sample data
+6. Deploy to production
 
 ---
 
 ## Documentation
 
-### For Developers
-- **[Architecture Overview](ARCHITECTURE.md)** - System design and data flow
-- **[Database Schema](database_schema.md)** - Complete schema with relationships
-- **[API Reference](api_reference.md)** - All endpoints with examples
-- **[Real-time Implementation](realtime_implementation.md)** - WebSocket subscriptions
+**Core Docs:**
+- [Architecture Overview](integration_overview.md) - System design
+- [Database Schema](database_schema.md) - Complete schema
+- [API Reference](api_reference.md) - All endpoints
 
-### For Operators
-- **[Deployment Guide](deployment_guide.md)** - Production infrastructure setup
-- **[Workflow Templates](docs/workflow_templates.md)** - Industry-specific examples
-- **[Best Practices](docs/best_practices.md)** - Supervised autonomy patterns
+**Workflow Guides:**
+- [Staffing Agency Use Cases](USE_CASES_STAFFING.md) - Detailed workflows
+- [Dogfooding Case Studies](DOGFOODING.md) - How we use Echelon
+- [Why Supervised Autonomy](WHY_SUPERVISED_AUTONOMY.md) - Technical deep dive
+
+**Deployment:**
+- [Deployment Guide](deployment_guide.md) - Production setup
+- [Integration Guide](integration_overview.md) - Connect your tools
 
 ---
 
-## Development Roadmap
+## Roadmap
 
-### Q4 2025: Foundation
-- [x] Core database schema
-- [x] Authentication and authorization
-- [x] Basic workflow designer (Base44)
-- [x] n8n integration
-- [ ] Approval workflow nodes
-- [ ] Audit log visualization
+### Phase 1: Foundation (Current)
+- [x] Core database schema and API
+- [x] Supabase/n8n/Cloudflare integration
+- [x] Approval workflow nodes
+- [x] Audit logging
+- [ ] Visual workflow designer (in progress)
 
-### Q1 2026: Vertical Templates
-- [ ] Logistics workflow templates
-- [ ] Professional services templates
-- [ ] Healthcare operations templates
+### Phase 2: Templates (Next 3 months)
+- [ ] Staffing agency workflow library
+- [ ] Insurance brokerage templates
+- [ ] Financial services automation templates
 - [ ] Template customization wizard
-- [ ] ROI calculator per vertical
 
-### Q2 2026: Enterprise Features
+### Phase 3: Platform (6-12 months)
+- [ ] Self-serve workflow deployment
+- [ ] Workflow marketplace
+- [ ] Advanced analytics
 - [ ] Multi-tenant architecture
-- [ ] Role-based approval routing
-- [ ] Compliance reporting (SOC 2, HIPAA)
-- [ ] Advanced analytics dashboard
-- [ ] Slack/Teams integrations
-
-### Q3-Q4 2026: Scale & Expansion
-- [ ] Self-service workflow marketplace
-- [ ] Partner ecosystem (consultants)
-- [ ] Advanced AI model routing
-- [ ] Global deployment (multi-region)
 
 ---
 
 ## Contributing
 
-We welcome contributions from developers who understand the nuances of enterprise automation and AI limitations.
+Contributions welcome from developers who understand that:
+- AI works best WITH supervision, not instead of humans
+- Generic platforms don't fit specific business needs
+- The future is businesses building their own tools
 
-### Contribution Guidelines
-1. **Read** `STRATEGIC_POSITIONING.md` to understand our philosophy
-2. **Review** existing issues and PRs to avoid duplication
-3. **Follow** our code standards (see `CONTRIBUTING.md`)
-4. **Test** supervised autonomy flows (don't just test happy paths)
-5. **Document** why AI decisions were made (observability first)
-
----
-
-## Security & Compliance
-
-### Data Handling
-- All sensitive data encrypted at rest (AES-256)
-- PII redacted from AI model requests
-- Role-based access control (RBAC) for workflows
-- Audit logs retained for 7 years
-
-### Compliance Certifications (Planned)
-- SOC 2 Type II (Q2 2026)
-- HIPAA BAA available (Q3 2026)
-- GDPR compliant (architecture designed for EU deployment)
-
-### Responsible AI
-- Transparent reasoning chains (no black boxes)
-- Human approval required for high-stakes decisions
-- Bias testing and monitoring
-- Model performance benchmarks published quarterly
-
----
-
-## Support
-
-### For Technical Issues
-- **GitHub Issues:** [Create new issue](https://github.com/sperry-entelech/echelon/issues/new)
-- **Email:** support@entelech.net
-
-### For Business Inquiries
-- **Demos:** sperry@entelech.net
-- **Partnerships:** partners@entelech.net
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details
+MIT License - see [LICENSE](LICENSE)
 
 ---
 
-**Echelon** - _Supervised Autonomy Infrastructure for Enterprise AI_
+## Support
+
+**Technical:** [GitHub Issues](https://github.com/sperry-entelech/echelon/issues)
+**Business:** sperry@entelech.net
+
+---
+
+**Echelon** - _Build your workflows, don't buy generic SaaS_
