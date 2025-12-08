@@ -17,6 +17,23 @@ Echelon is a **supervised workflow automation platform** that enables businesses
 
 ---
 
+## Documentation Index
+
+| Doc | Audience | Purpose |
+|-----|----------|---------|
+| [README.md](README.md) | Everyone | Overview, quick start |
+| [DECISIONS.md](DECISIONS.md) | Partners, leads | Why we made key choices |
+| [AGENTIC_ROADMAP.md](AGENTIC_ROADMAP.md) | Technical partners | Future phases, memory, autonomy |
+| [docs/database_schema.md](docs/database_schema.md) | Devs | Tables, relationships |
+| [docs/api_reference.md](docs/api_reference.md) | Devs | Endpoints |
+| [docs/integration_overview.md](docs/integration_overview.md) | Devs | System architecture |
+| [docs/deployment_guide.md](docs/deployment_guide.md) | Devs | Production setup |
+| [USE_CASES_STAFFING.md](USE_CASES_STAFFING.md) | Sales, partners | Workflow examples |
+| [DOGFOODING.md](DOGFOODING.md) | Everyone | How we use it ourselves |
+| [Echelon_MicroSaaS_MVP_Dev_Spec.pdf](Echelon_MicroSaaS_MVP_Dev_Spec.pdf) | Devs | Full MVP specification |
+
+---
+
 ## Why Echelon Exists
 
 ### The Problem: Generic SaaS Doesn't Fit
@@ -148,6 +165,8 @@ Professional services firms (staffing agencies, insurance brokerages, financial 
 | **Orchestration** | n8n | Workflow execution |
 | **AI Models** | Claude, OpenAI | Reasoning, generation |
 
+> **Note:** Stack is flexible. Original spec used no-code tools. Native code preferred if dev available. See [DECISIONS.md](DECISIONS.md) for context.
+
 ---
 
 ## Dogfooding: How We Use Echelon
@@ -208,9 +227,9 @@ npm run deploy:workers
 ## Documentation
 
 **Core Docs:**
-- [Architecture Overview](integration_overview.md) - System design
-- [Database Schema](database_schema.md) - Complete schema
-- [API Reference](api_reference.md) - All endpoints
+- [Architecture Overview](docs/integration_overview.md) - System design
+- [Database Schema](docs/database_schema.md) - Complete schema
+- [API Reference](docs/api_reference.md) - All endpoints
 
 **Workflow Guides:**
 - [Staffing Agency Use Cases](USE_CASES_STAFFING.md) - Detailed workflows
@@ -218,8 +237,8 @@ npm run deploy:workers
 - [Why Supervised Autonomy](WHY_SUPERVISED_AUTONOMY.md) - Technical deep dive
 
 **Deployment:**
-- [Deployment Guide](deployment_guide.md) - Production setup
-- [Integration Guide](integration_overview.md) - Connect your tools
+- [Deployment Guide](docs/deployment_guide.md) - Production setup
+- [Integration Guide](docs/integration_overview.md) - Connect your tools
 
 ---
 
