@@ -22,6 +22,7 @@ Echelon is a **supervised workflow automation platform** that enables businesses
 | Doc | Audience | Purpose |
 |-----|----------|---------|
 | [README.md](README.md) | Everyone | Overview, quick start |
+| [VISION.md](VISION.md) | Everyone | 5-year trajectory, where we're going |
 | [MARKET_FOCUS.md](MARKET_FOCUS.md) | Founders, operators | Where we're starting and why (quick read) |
 | [DECISIONS.md](DECISIONS.md) | Partners, leads | Why we made key choices |
 | [AGENTIC_ROADMAP.md](AGENTIC_ROADMAP.md) | Technical partners | Future phases, memory, autonomy |
